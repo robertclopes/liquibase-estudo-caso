@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<databaseChangeLog  
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"  
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">  
+	
+    <changeSet author="Robert" id="0.0.3-01">
+        <tagDatabase  tag="0.0.3"/>
+    </changeSet>
+
+    <changeSet author="Robert" id="0.0.3-02">
+        <createTable tableName="municipio">
+            <column autoIncrement="true" name="Id" type="INT(10)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="Codigo" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Nome" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Uf" type="CHAR(2)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="municipio"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="Robert" id="0.0.3-03">
+        <dropTable  cascadeConstraints="true"  
+            catalogName="cat"  
+            schemaName="public"  
+            tableName="person"/>  
+        <rollback>
+            <createTable tableName="PERSON">
+            <column name="ID" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_PERSON"/>
+            </column>
+            <column name="NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ADDRESS1" type="VARCHAR(50)"/>
+            <column name="ADDRESS2" type="VARCHAR(50)"/>
+            <column name="CITY" type="VARCHAR(30)"/>
+            <column name="COUNTRY" type="VARCHAR(2)"/>
+        </createTable>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="Robert" id="0.0.3-04">
+        <dropTable  cascadeConstraints="true"  
+            catalogName="cat"  
+            schemaName="public"  
+            tableName="company"/>  
+        <rollback>
+            <createTable tableName="COMPANY">
+            <column name="ID" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_COMPANY"/>
+            </column>
+            <column name="NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ADDRESS1" type="VARCHAR(50)"/>
+            <column name="ADDRESS2" type="VARCHAR(50)"/>
+            <column name="CITY" type="VARCHAR(30)"/>
+        </createTable>
+        </rollback>
+    </changeSet>
+   
+</databaseChangeLog> 
