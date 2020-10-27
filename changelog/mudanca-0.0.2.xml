@@ -32,6 +32,6 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-    </changeSet>  
+    </changeSet>   
    
 </databaseChangeLog> 
