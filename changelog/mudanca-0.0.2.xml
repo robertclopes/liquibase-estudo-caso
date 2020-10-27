@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<databaseChangeLog  
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"  
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">  
+
+    <!-- TAG 0.0.2
+        # Criação tabela estado
+    -->    
+
+    <changeSet author="Robert" id="0.0.2-01">
+        <tagDatabase  tag="0.0.2"/>
+    </changeSet>
+
+    <changeSet author="Robert" id="0.0.2-02">
+        <createTable tableName="estado">
+            <column autoIncrement="true" name="Id" type="INT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="CodigoUf" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Nome" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Uf" type="CHAR(2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Regiao" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>  
+   
+</databaseChangeLog> 

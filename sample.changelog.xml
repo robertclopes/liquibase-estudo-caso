@@ -48,5 +48,6 @@
 
     <!-- Criação de bloco de include a partir da TAG 0.0.1 -->
     <include file="changelog/mudanca-0.0.1.xml"/>
+    <include file="changelog/mudanca-0.0.2.xml"/>
 
 </databaseChangeLog>
