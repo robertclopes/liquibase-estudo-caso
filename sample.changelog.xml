@@ -45,4 +45,8 @@
             <column name="country" type="varchar(2)"/>
         </addColumn>
     </changeSet>
+
+    <!-- Criação de bloco de include a partir da TAG 0.0.1 -->
+    <include file="changelog/mudanca-0.0.1.xml"/>
+
 </databaseChangeLog>
