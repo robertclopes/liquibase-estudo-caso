@@ -12,43 +12,10 @@
         <tagDatabase  tag="0.0.0"/>
     </changeSet>
 
-    <changeSet id="0.0.0-01" author="Robert">
-        <createTable tableName="person">
-            <column name="id" type="int">
-                <constraints primaryKey="true"/>
-            </column>
-            <column name="name" type="varchar(50)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="address1" type="varchar(50)"/>
-            <column name="address2" type="varchar(50)"/>
-            <column name="city" type="varchar(30)"/>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="0.0.0-02" author="Robert">
-        <createTable tableName="company">
-            <column name="id" type="int">
-                <constraints primaryKey="true"/>
-            </column>
-            <column name="name" type="varchar(50)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="address1" type="varchar(50)"/>
-            <column name="address2" type="varchar(50)"/>
-            <column name="city" type="varchar(30)"/>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="0.0.0-03" author="Robert">
-        <addColumn tableName="person">
-            <column name="country" type="varchar(2)"/>
-        </addColumn>
-    </changeSet> 
-
     <!-- Criação de bloco de include a partir da TAG 0.0.1 -->
     <include file="changelog/mudanca-0.0.1.xml"/>
     <include file="changelog/mudanca-0.0.2.xml"/>
     <include file="changelog/mudanca-0.0.3.xml"/>
+    <include file="changelog/mudanca-0.0.4.xml"/>
 
 </databaseChangeLog>

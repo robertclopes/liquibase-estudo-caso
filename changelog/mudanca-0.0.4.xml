@@ -6,28 +6,22 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">  
 	
-    <changeSet author="Robert" id="0.0.3-01">
-        <tagDatabase  tag="0.0.3"/>
+    <changeSet author="Robert" id="0.0.4-01">
+        <tagDatabase  tag="0.0.4"/>
     </changeSet>
 
-    <changeSet author="Robert" id="0.0.3-02">
-        <createTable tableName="municipio">
-            <column autoIncrement="true" name="Id" type="INT(10)">
-                <constraints nullable="false" primaryKey="true"/>
+    <changeSet author="Robert" id="0.0.4-02"> 
+        <createTable tableName="regiao">
+            <column autoIncrement="true" name="Id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PRIMARY"/>
             </column>
-            <column name="Codigo" type="INT(10)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="Nome" type="VARCHAR(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="Uf" type="CHAR(2)">
+            <column name="Nome" type="VARCHAR(50)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
         <rollback>
-            <dropTable tableName="municipio"/>
+            <dropTable tableName="regiao"/>
         </rollback>
     </changeSet>
-
+   
 </databaseChangeLog> 
